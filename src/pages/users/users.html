@@ -1,18 +1,23 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon> 
+    </button>
     <ion-title>Github</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let user of users">
-    <img [src]="user.avatar_url">
-    <ion-card-content>
-      <ion-card-title>
-        {{ user.login }}
-      </ion-card-title>
-    </ion-card-content>
-  </ion-card>
+  <ion-searchbar (input)="search($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let user of users">
+      <ion-thumbnail item-left>
+        <img [src]="user.avatar_url">
+      </ion-thumbnail>
+      <h2>{{ user.login }}</h2>
+      <button clear item-right (click)="goToDetails(user.login)">View</button>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 <ion-footer>

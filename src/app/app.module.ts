@@ -4,11 +4,13 @@ import { MyApp } from './app.component';
 
 import { UsersPage } from '../pages/users/users';
 import { GithubUsers } from '../providers/github-users';
+import {UserDetailsPage } from '../pages/user-details/user-details';
 
 @NgModule({
   declarations: [
     MyApp,
-    UsersPage
+    UsersPage,
+    UserDetailsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -16,7 +18,8 @@ import { GithubUsers } from '../providers/github-users';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    UsersPage
+    UsersPage,
+    UserDetailsPage
   ],
   providers: [GithubUsers] // Add GithubUsers provider
 })
