@@ -24,6 +24,11 @@ export class UsersPage {
   goToDetails(login: string) {
     this.navCtrl.push(UserDetailsPage, {login});
   }
+  doRefresh(refresher) {
+    setTimeout(() => {
+      refresher.complete();
+    }, 2000);
+  }
   search(searchEvent) {
     let term = searchEvent.target.value
     // We will only perform the search if we have 3 or more characters
